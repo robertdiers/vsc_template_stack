@@ -12,5 +12,5 @@ services:
         environment:
             - DOCKER_USER=$USER
             - PORT=40000
-        network: host
+        network_mode: host
         user: "${EXAMPLE_UID}:${EXAMPLE_GID}"
