@@ -6,7 +6,7 @@ RUN sudo apt install -y maven git
 RUN sudo apt install -y openjdk-11-jdk
 
 #install code extensions
-RUN code-server --install-extension redhat.java
+RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension GabrielBB.vscode-lombok
 
 #configure git
