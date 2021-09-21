@@ -7,6 +7,7 @@ services:
         volumes:
             - /home/robert/.config/code-server/config.yaml:/home/coder/.config/code-server/config.yaml
             - /home/robert/.m2/repository:/home/coder/.m2/repository
+            - /home/robert/.m2/settings.xml:/home/coder/.m2/settings.xml
             - ${PWD}/..:/home/coder/project
         environment:
             - DOCKER_USER=$USER
