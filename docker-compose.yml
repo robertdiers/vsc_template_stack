@@ -3,10 +3,7 @@ services:
 
     vsc-server:
         build: .
-        container_name: code-server
-        hostname: code-server
-        networks:
-            vsc-net:
+        container_name: app-vsc-server
         volumes:
             - /home/robert/.config/code-server/config.yaml:/home/coder/.config/code-server/config.yaml
             - /home/robert/.m2/repository:/home/coder/.m2/repository
@@ -14,13 +11,5 @@ services:
         environment:
             - DOCKER_USER=$USER
             - PORT=40000
+        network: host
         user: "${EXAMPLE_UID}:${EXAMPLE_GID}"
-        expose:
-            - 40000
-            - 40001
-        ports:        
-            - 40000:40000
-            - 40001:40001
-
-networks:
-    vsc-net:
